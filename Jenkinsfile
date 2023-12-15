@@ -1,10 +1,10 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'python:3.12.1-alpine3.19' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Clone') {
             steps {
-                sh 'python --version'
+              git 'https://github.com/devhainguyen-94/mysite_django.git'
             }
         }
     }
